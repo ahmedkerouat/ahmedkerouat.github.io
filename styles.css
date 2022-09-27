@@ -17,9 +17,7 @@
 }
 
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
+
     background: var(--background);
 }
 
@@ -28,16 +26,20 @@ body {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    justify-content: center;
 }
 
 .right {
-    text-align: right;
+    text-align: center;
     width: 100%;
 }
 
 .stack {
     display: grid;
     grid-template-columns: 1fr;
+    text-align: center;
+
 }
 
 .stack span {

@@ -115,6 +115,14 @@ a {
   color: var(--color);
 }
 
+h2#aboutme {
+  font-family: "Raleway", sans-serif;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  place-content: center;
+}
+
 .nav__list {
   font-family: "Raleway", sans-serif;
   display: flex;

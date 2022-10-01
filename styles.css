@@ -28,10 +28,6 @@ body {
   justify-content: center;
 }
 
-.right {
-  text-align: center;
-  width: 100%;
-}
 
 .stack {
   display: grid;
@@ -62,6 +58,11 @@ body {
 
 .stack span:nth-child(even) {
   --glitch-translate: -8px;
+}
+
+.right {
+  text-align: center;
+  width: 100%;
 }
 
 @keyframes stack {

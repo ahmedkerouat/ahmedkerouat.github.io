@@ -10,6 +10,30 @@ body {
   background-color: black;
 }
 
+.mask-content {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: left;
+}
+.image-container img {
+  margin-top: 200px;
+  margin-left: 100px;
+}
+
+.image-text {
+  font-size: 18px;
+  color: white;
+  margin-top: 100px;
+  margin-left: 150px;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
 .nav {
   background-color: #333;
   height: 50px;

@@ -38,8 +38,9 @@ body {
     transform: scale(1);
   }
 }
+
 .centered-text {
-  opacity: 100;
+  opacity: 0;
   font-family: "VT323", monospace;
   font-size: 22px;
   color: rgb(4, 199, 4);
@@ -54,6 +55,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  animation: centeredTextEffect 1s linear 3s forwards;
 }
 
 .centered-text li {
@@ -67,6 +69,17 @@ body {
   }
   100% {
     filter: none;
+    transform: scale(1);
+  }
+}
+
+@keyframes centeredTextEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
 }

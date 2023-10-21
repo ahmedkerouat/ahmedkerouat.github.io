@@ -1,18 +1,16 @@
-const tvImage = document.getElementById("tv-image");
-const tvShutdown = document.getElementById("shutdown-animation");
+document.addEventListener("DOMContentLoaded", function() {
+    const tvImage = document.querySelector(".tv-image");
+    const tvShutdown = document.querySelector(".tv-shutdown");
 
-// Function to remove the animation class from the TV image
-function removeImageAnimationClass() {
-  tvImage.classList.remove("tv-animation");
-  tvImage.removeEventListener("animationend", removeImageAnimationClass);
-}
+    // Check if the animation has already been played
+    const hasAnimationPlayed = sessionStorage.getItem("tvAnimationPlayed");
 
-// Function to remove the animation class from the TV shutdown
-function removeShutdownAnimationClass() {
-  tvShutdown.classList.remove("shutdown-animation");
-  tvShutdown.removeEventListener("animationend", removeShutdownAnimationClass);
-}
-
-// Add event listeners to detect when the animations have finished
-tvImage.addEventListener("animationend", removeImageAnimationClass, { once: true });
-tvShutdown.addEventListener("animationend", removeShutdownAnimationClass, { once: true });
+    if (!hasAnimationPlayed) {
+        // If not, add the class to play the animation
+        tvImage.classList.add("play-once");
+        tvShutdown.style.animation = "shutdown 400ms linear 3s forwards";
+        
+        // Set a session storage item to mark that the animation has been played
+        sessionStorage.setItem("tvAnimationPlayed", "true");
+    }
+});

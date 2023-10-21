@@ -7,7 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
   position: relative;
 }
 
@@ -16,20 +15,9 @@ body {
   .tv-shutdown {
     display: none;
   }
-}
-
-.background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 43%;
-  height: 80%;
-  z-index: -1;
-  filter: blur(5px);
-  opacity: 0;
-  transition: filter 0.5s ease, opacity 0.5s ease;
-  animation: backgroundEffect 5s ease-in-out forwards;
+  .about-me {
+    bottom: 1%;
+  }
 }
 
 .tv-image {
@@ -84,12 +72,25 @@ body {
 }
 
 .tv-shutdown {
-  width: 40%;
+  width: 42%;
   height: 40%;
   position: absolute;
   background: white;
   z-index: -1;
   opacity: 0;
+}
+.about-me {
+  bottom: -300px;
+  position: absolute;
+  left: 15rem;
+}
+
+.about-me h2 {
+  font-size: 32px;
+}
+
+.about-me p {
+  font-size: 16px;
 }
 
 @keyframes shutdown {

@@ -1,38 +1,52 @@
 @import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
 
-body {
-  background-color: black;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-}
-
 @media (max-width: 840px) {
   .tv-image,
   .tv-shutdown {
     display: none;
   }
-  .about-me {
-    bottom: 1%;
-  }
+}
+
+body {
+  background-color: black;
+}
+.container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr 0.8fr;
+  grid-template-rows: 3fr 0.9fr 1.2fr 1.4fr 0.5fr;
+  gap: 5% 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "TV-Section TV-Section TV-Section"
+    "About-me About-me About-me"
+    "Projects Projects ."
+    "Artwork Artwork Artwork"
+    ". Contact .";
+}
+
+.TV-Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: TV-Section;
+  background-color: black;
 }
 
 .tv-image {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
+  overflow: hidden;
+  margin-left: 36px;
   transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.tv-animation {
-  animation: tvImageEffect 3s ease-in-out forwards;
-}
-
-.shutdown-animation {
-  animation: shutdown 400ms linear 3s forwards;
+.tv-shutdown {
+  width: 38%;
+  height: 30%;
+  margin-left: 20px;
+  margin-bottom: 100px;
+  z-index: 2;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  opacity: 0;
 }
 
 .centered-text {
@@ -42,18 +56,12 @@ body {
   color: rgb(4, 199, 4);
   text-align: center;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
+  margin-right: 30px;
   align-items: center;
-  justify-content: flex-start;
-  top: 30%;
-  height: 100%;
-  animation: centeredTextEffect 0.5s linear 3.5s forwards;
+  position: absolute;
+  animation: centeredTextEffect 0.3s linear 1.4s forwards;
   animation-fill-mode: both;
+  margin-bottom: 10%;
 }
 
 .centered-text li {
@@ -66,31 +74,28 @@ body {
   transform: scale(1.3);
 }
 
-.centered-image {
-  width: 70%;
-  height: auto;
+.tv-animation {
+  animation: tvImageEffect 1s ease-in-out forwards;
 }
 
-.tv-shutdown {
-  width: 42%;
-  height: 40%;
-  position: absolute;
-  background: white;
-  z-index: -1;
-  opacity: 0;
-}
-.about-me {
-  bottom: -300px;
-  position: absolute;
-  left: 15rem;
+.shutdown-animation {
+  animation: shutdown 400ms linear 1s forwards;
 }
 
-.about-me h2 {
-  font-size: 32px;
+.About-me {
+  grid-area: About-me;
 }
 
-.about-me p {
-  font-size: 16px;
+.Projects {
+  grid-area: Projects;
+}
+
+.Artwork {
+  grid-area: Artwork;
+}
+
+.Contact {
+  grid-area: Contact;
 }
 
 @keyframes shutdown {
@@ -112,12 +117,6 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .centered-text {
-    animation: centeredTextEffectReduced 0.1s linear 3s forwards;
-  }
-}
-
 @keyframes tvImageEffect {
   0% {
     filter: grayscale(100%);
@@ -128,7 +127,6 @@ body {
     transform: scale(100%);
   }
 }
-
 @keyframes centeredTextEffect {
   0% {
     opacity: 0;
@@ -137,14 +135,5 @@ body {
   100% {
     opacity: 1;
     transform: scale(100%);
-  }
-}
-
-@keyframes centeredTextEffectReduced {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

@@ -1,16 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const tvImage = document.querySelector(".tv-image");
+document.addEventListener("DOMContentLoaded", function () {
+    const centeredText = document.querySelector(".centered-text");
     const tvShutdown = document.querySelector(".tv-shutdown");
-
-    // Check if the animation has already been played
-    const hasAnimationPlayed = sessionStorage.getItem("tvAnimationPlayed");
-
-    if (!hasAnimationPlayed) {
-        // If not, add the class to play the animation
-        tvImage.classList.add("play-once");
-        tvShutdown.style.animation = "shutdown 400ms linear 3s forwards";
-        
-        // Set a session storage item to mark that the animation has been played
-        sessionStorage.setItem("tvAnimationPlayed", "true");
+    const tvImage = document.querySelector(".tv-image");
+  
+    // Function to remove the classes
+    function removeAnimations() {
+      tvShutdown.classList.remove("shutdown-animation");
+      tvImage.classList.remove("tv-animation");
     }
-});
+  
+    // Check if the opacity of centered-text is not 0 and remove animations
+    function checkOpacity() {
+      const centeredTextOpacity = getComputedStyle(centeredText).getPropertyValue("opacity");
+      if (centeredTextOpacity !== "0") {
+        removeAnimations();
+      }
+    }
+    checkOpacity();
+    setInterval(checkOpacity, 1000);
+  });
+  

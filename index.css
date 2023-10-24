@@ -109,6 +109,7 @@ body {
   padding-top: 10%;
   font-family: "Poppins";
   padding-left: 3rem;
+  margin-right: 1rem;
 }
 
 .About-me h2 {
@@ -146,6 +147,7 @@ body {
   color: white;
   font-family: "Poppins";
   padding-left: 3rem;
+  margin-right: 3rem;
 }
 
 .centered-div {
@@ -168,13 +170,21 @@ body {
   transition: 0.1s;
 }
 
+.description {
+  margin-top: 3%;
+  font-size: 70%;
+  padding-left: 20%;
+  padding-right: 20%;
+  z-index: 4;
+}
+
 .github-link {
   position: relative;
 }
 .github-logo,
 .github-text {
   position: absolute;
-  padding-bottom: 80%;
+  padding-bottom: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -185,6 +195,7 @@ body {
 
 .github-text {
   top: 50%;
+  margin-top: -20%;
 }
 
 .github-link:hover .project-image {

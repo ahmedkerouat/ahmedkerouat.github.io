@@ -6,6 +6,10 @@
   .tv-shutdown {
     display: none;
   }
+  .TV-Section {
+    margin-top: 150px;
+    margin-bottom: 100px;
+  }
 }
 
 body {
@@ -23,6 +27,20 @@ body {
     "Projects Projects ."
     "Artwork Artwork Artwork"
     ". Contact .";
+}
+
+.container-phone {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1% 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "TV-Section"
+    "About-me"
+    "Gas-Cave"
+    "Projects"
+    "Artwork"
+    "Contact";
 }
 
 .TV-Section {
@@ -125,6 +143,9 @@ body {
 
 .Projects {
   grid-area: Projects;
+  color: white;
+  font-family: "Poppins";
+  padding-left: 3rem;
 }
 
 .Artwork {

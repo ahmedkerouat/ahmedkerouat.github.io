@@ -19,4 +19,23 @@ document.addEventListener("DOMContentLoaded", function () {
     checkOpacity();
     setInterval(checkOpacity, 1000);
   });
+
+  function updateContainerClass() {
+    const mainLayout = document.getElementById("main-layout");
+  
+    if (window.innerWidth <= 840) {
+      mainLayout.classList.remove("container");
+      mainLayout.classList.add("container-phone");
+    } else {
+      mainLayout.classList.remove("container-phone");
+      mainLayout.classList.add("container");
+    }
+  }
+  
+  // load
+  updateContainerClass();
+  
+  // Call when window is resized
+  window.addEventListener("resize", updateContainerClass);
+  
   

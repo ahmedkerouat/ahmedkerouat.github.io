@@ -18,13 +18,13 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr 0.8fr;
-  grid-template-rows: 1fr 0.3fr 1.2fr 1.4fr 0.5fr;
+  grid-template-rows: 0.3fr 0.3fr 1.2fr 1.4fr 0.5fr;
   gap: 1% 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "TV-Section TV-Section TV-Section"
     "About-me Gas-Cave Gas-Cave"
-    "Projects Projects ."
+    "Projects Projects Projects"
     "Artwork Artwork Artwork"
     ". Contact .";
 }
@@ -146,6 +146,25 @@ body {
   color: white;
   font-family: "Poppins";
   padding-left: 3rem;
+}
+
+.centered-div {
+  text-align: center;
+}
+
+.right-div {
+  margin-left: 40%;
+  height: 200px;
+}
+
+.left-div {
+  margin-right: 40%;
+  height: 10%;
+}
+
+.Projects img {
+  height: auto;
+  max-width: 50%;
 }
 
 .Artwork {

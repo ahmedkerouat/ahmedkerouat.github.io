@@ -165,6 +165,36 @@ body {
 .Projects img {
   height: auto;
   max-width: 50%;
+  transition: 0.1s;
+}
+
+.github-link {
+  position: relative;
+}
+.github-logo,
+.github-text {
+  position: absolute;
+  padding-bottom: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  color: white;
+}
+
+.github-text {
+  top: 50%;
+}
+
+.github-link:hover .project-image {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.github-link:hover .github-logo,
+.github-link:hover .github-text {
+  opacity: 1;
 }
 
 .Artwork {

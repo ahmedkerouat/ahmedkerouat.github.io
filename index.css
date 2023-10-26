@@ -21,8 +21,29 @@ body {
   transition: all 2s;
 }
 
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
 .show {
   opacity: 1;
+}
+
+.tv-transition {
+  transform: scale(1.2);
+  animation: fadeOut 1s forwards;
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .container {
@@ -158,6 +179,7 @@ body {
   font-family: "Poppins";
   padding-left: 3rem;
   margin-right: 3rem;
+  margin-bottom: 10%;
 }
 
 .centered-div {
@@ -220,6 +242,11 @@ body {
 
 .Artwork {
   grid-area: Artwork;
+  color: white;
+  font-family: "Poppins";
+  padding-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 10%;
 }
 
 .Contact {

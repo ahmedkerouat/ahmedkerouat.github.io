@@ -57,11 +57,16 @@ window.addEventListener("resize", updateContainerClass);
 
 // Function to handle intersection changes
 function handleIntersection(entries) {
+  const tvImage = document.querySelector(".tv-image");
   entries.forEach(entry => {
     if (entry.isIntersecting && entry.target.classList.contains("hidden")) {
       entry.target.classList.add("show");
+      if(entry.target.classList.contains("About-me"))
+        tvImage.classList.add("tv-transition");
     } else {
       entry.target.classList.remove("show");
+      if(entry.target.classList.contains("About-me"))
+        tvImage.classList.remove("tv-transition");
     }
   });
 }

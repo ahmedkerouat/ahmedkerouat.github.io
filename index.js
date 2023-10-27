@@ -78,3 +78,49 @@ const intersectionObserver = new IntersectionObserver(handleIntersection);
 hiddenElements.forEach(element => {
   intersectionObserver.observe(element);
 });
+
+const images = document.querySelectorAll(".col-grid img");
+
+// Get the modal and the modal image
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("zoomedImage");
+const closeButton = document.getElementById("closeButton");
+
+function openModal(event) {
+  modal.classList.add("open");
+  modalImg.src = event.target.src;
+  const title = event.target.getAttribute("data-title");
+  document.getElementById("imageTitle").textContent = title;
+}
+
+function closeModal() {
+  modal.classList.remove("open"); 
+}
+
+// Function to close the modal when the Escape key is pressed
+function closeOnEscapeKey(event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+}
+
+// Attach click event listeners to the images
+images.forEach((image) => {
+  image.addEventListener("click", openModal);
+});
+
+// Attach click event listener to the close button
+closeButton.addEventListener("click", closeModal);
+
+// Attach event listener to close modal on the escape key press
+document.addEventListener("keydown", closeOnEscapeKey);
+
+function closeOnCrossClick() {
+  closeModal();
+}
+
+// Attach event listener to the cross button
+crossButton.addEventListener("click", closeOnCrossClick);
+
+
+

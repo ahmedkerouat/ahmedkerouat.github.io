@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   checkOpacity();
   setInterval(checkOpacity, 1000);
+  
 });
 
 function updateContainerClass() {
@@ -36,6 +37,7 @@ function updateContainerClass() {
     leftProjects.forEach(element => {
       element.classList.remove("left-div");
     });
+
   } else {
     mainLayout.classList.remove("container-phone");
     mainLayout.classList.add("container");

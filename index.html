@@ -25,13 +25,13 @@
             alt="Mask Pixel Art"
             class="centered-image"
           />
-          <li>About</li>
-          <li>Projects</li>
-          <li>Artwork</li>
-          <li>Contact</li>
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#artwork">Artwork</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="About-me hidden">
+      <div id="about-me" class="About-me hidden">
         <h2>About me:</h2>
         <p>My name is Ahmed Kerouat.</p>
         <p>I consider my self as an artist, a developer and a leader.</p>
@@ -72,7 +72,7 @@
           personal lair.
         </a>
       </div>
-      <div class="Projects hidden">
+      <div id="projects" class="Projects hidden">
         <h2>Notable Projects:</h2>
         <p>
           During High school, I had the opportunity to work on multitude of
@@ -192,7 +192,7 @@
           </div>
         </div>
       </div>
-      <div class="Artwork">
+      <div id="artwork" class="Artwork">
         <h2>Artwork:</h2>
         <p>
           Throughout my time in high school and middle school, I had the
@@ -300,7 +300,22 @@
               src="imgs/artwork/30.jpg"
               data-title="❝The Serpent Devouring Your Soul❞ (2020)"
             />
-            <img src="imgs/artwork/26.png" data-title="Untitled (2021)" />
+            <img
+              id="last-child"
+              src="imgs/artwork/26.png"
+              data-title="Untitled (2021)"
+            />
+            <div id="contact" class="Contact">
+              <h2>Contact:</h2>
+              <h3>
+                <a
+                  class="instagram"
+                  href="https://www.instagram.com/a.kerouart/"
+                  target="_blank"
+                  >@a.kerouart</a
+                >
+              </h3>
+            </div>
           </div>
         </div>
         <div class="modal" id="imageModal">
@@ -310,7 +325,6 @@
           <p id="imageDate"></p>
         </div>
       </div>
-      <div class="Contact"></div>
     </div>
     <script src="index.js"></script>
   </body>

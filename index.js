@@ -63,21 +63,32 @@ function handleIntersection(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting && entry.target.classList.contains("hidden")) {
       entry.target.classList.add("show");
-      if(entry.target.classList.contains("About-me"))
+      if(entry.target.classList.contains("About-me-title"))
         tvImage.classList.add("tv-transition");
     } else {
       entry.target.classList.remove("show");
-      if(entry.target.classList.contains("About-me"))
+      if(entry.target.classList.contains("About-me-title"))
         tvImage.classList.remove("tv-transition");
+    }
+    if(entry.isIntersecting && entry.target.classList.contains("hidden-effect")){
+      entry.target.classList.add("show-effect");
+    }
+    else{
+      entry.target.classList.remove("show-effect");
     }
   });
 }
 
 // Get all elements with the "hidden" class and observe them
 const hiddenElements = document.querySelectorAll(".hidden");
+const effectHiddenElements = document.querySelectorAll(".hidden-effect");
 const intersectionObserver = new IntersectionObserver(handleIntersection);
 
 hiddenElements.forEach(element => {
+  intersectionObserver.observe(element);
+});
+
+effectHiddenElements.forEach(element => {
   intersectionObserver.observe(element);
 });
 

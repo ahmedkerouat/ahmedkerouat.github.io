@@ -355,9 +355,9 @@ body {
 
 .Contact {
   grid-area: Contact;
-  margin-left: -50px;
-  margin-top: 20%;
-  margin-bottom: 50%;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: -17%;
 }
 
 .instagram {
